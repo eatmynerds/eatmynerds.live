@@ -1,5 +1,5 @@
-base_url = "https://port19.xyz"
-title = "Port19s Webpage"
+base_url = "https://eatmynerds.live"
+title = "Eatmynerds Webpage"
 generate_feeds = true
 feed_filenames = ["rss.xml"]
 

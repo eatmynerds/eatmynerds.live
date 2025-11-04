@@ -1,135 +1,57 @@
 {% extends "base.html" %}
+
 {% block meta %}
-<title>Port19s Webpage</title>
-<meta name="description" content="My Writings on Linux, Tech and Lifestyle">
+<title>Eatmynerds Webpage</title>
+<meta name="description" content="Personal reflections, thoughts, and tech discussion">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="//unpkg.com/alpinejs" defer></script>
 {% endblock meta %}
+
 {% block content %}
-
-<header style="">
-  <h1 style="font-family:Fira Sans,sans; padding-bottom:1.25rem; font-size:2.5em; margin-bottom:0;"> Port19s Webpage </h1>
-  <span>
-    <a href="/retro-games">🌸Retro Games🌸</a>
-    <a style="float:right" href="/programs">💻Programs I use💻</a>
-    <a style="float:left" href="/bible-study">✝️Bible Study✝️</a>
-  </span>
+<header>
+    <h1>Eatmynerds Webpage</h1>
+    <nav class="main-nav">
+      <a href="/games-i-like">🎮Games I like🎮</a>
+      <a href="/things-i-like">❤️Things I like❤️</a>
+      <a href="/programs">💻Programs I use💻</a>
+    </nav>
 </header>
-<wbr>
-<hr>
 
-<h2> Recent Posts </h2>
 <main>
+  <h1 class="content-header-bar">Recent Posts</h1>
+
   <div x-cloak>
     <script>
       document.addEventListener('alpine:init', () => {
-          Alpine.store('filter', {
-              filter: '',
-
-              check(el) {
-                  return this.filter === '' || el.textContent.includes(this.filter)
-              }
-          })
+        Alpine.store('filter', {
+          filter: '',
+          check(el) {
+            return this.filter === '' || el.textContent.includes(this.filter)
+          }
+        })
       })
     </script>
-    <span x-data>
-      <button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '📚'">📚 lifestyle</button>
-      <button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '💻'">💻 tech</button>
-      <button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '🍚'">🍚 recipes</button>
-      <button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = ''">reset filters</button>
-    </span>
+    <div class="filter-buttons" x-data>
+      <button x-on:click="$store.filter.filter = '📚'">📚 Personal</button>
+      <button x-on:click="$store.filter.filter = '💻'">💻 Tech</button>
+      <button x-on:click="$store.filter.filter = '🍚'">🍚 Random</button>
+      <!-- <button x-on:click="$store.filter.filter = ''">Reset Filters</button> -->
+    </div>
   </div>
 
-  <ul x-data>
-  {% set lifestyle = get_section(path="lifestyle/_index.md") %}
-  {% set tech = get_section(path="tech/_index.md") %}
-  {% set recipes = get_section(path="recipes/_index.md") %}
-  {% set feed = lifestyle.pages | concat(with=tech.pages) | concat(with=recipes.pages) %}
-  {% for post in feed | sort(attribute="date") | reverse | slice(end=15) %}
-    <li x-show="$store.filter.check($el)">
-      <time>{{ post.date | date(format="%d.%m.%Y") }}</time>  &ndash;
-      <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <details> <summary><i>see all</i></summary> <ul x-data>
-  {% for post in feed | sort(attribute="date") | reverse | slice(start=15) %}
-    <li x-show="$store.filter.check($el)">
-      <time>{{ post.date | date(format="%d.%m.%Y") }}</time>  &ndash;
-      <a href="{{ post.permalink | safe }}">{{ post.title }} </a>
-    </li>
-  {% endfor %}
-  </ul> </details>
+  <div class="post-list-container">
+    <ul x-data>
+      {% set lifestyle = get_section(path="personal/_index.md") %}
+      {% set tech = get_section(path="tech/_index.md") %}
+      {% set recipes = get_section(path="random/_index.md") %}
+      {% set feed = lifestyle.pages | concat(with=tech.pages) | concat(with=recipes.pages) %}
+      {% for post in feed | sort(attribute="date") | reverse | slice(end=15) %}
+        <li x-show="$store.filter.check($el)">
+          <time>{{ post.date | date(format="%d.%m.%Y") }}</time> –
+          <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </main>
-
-<h2> Notable Projects </h2>
-<section class="projects">
-
- <h3> Emacs Packages </h3>
-
-  <details>
-    <summary>
-      <a href="https://github.com/port19x/eros-inspector">Eros Inspector</a>
-      Glue between <a href="https://github.com/xiongtx/eros">eros</a> and <a href="https://github.com/mmontone/emacs-inspector">inspector</a>
-    </summary>
-    <img src="{{ get_url(path="previews/eros-inspector.png") }}" width="600" alt="Image preview for eros-inspector">
-  </details>
-
-  <details>
-    <summary>
-      <a href="https://github.com/port19x/geiser-overlay">Geiser Overlay</a>
-      Overlay Scheme Evaluation Results
-    </summary>
-    <img src="{{ get_url(path="previews/geiser-overlay.png") }}" width="600" alt="Image preview for geiser-overlay">
-  </details>
-
-  <details>
-    <summary>
-      <a href="https://github.com/port19x/haproxy-mode">HAProxy Mode</a>
-      Emacs major mode for editing HAProxy config files
-    </summary>
-    <img src="{{ get_url(path="previews/prev-haproxy.png") }}" width="600" alt="Image preview for HAProxy Mode">
-  </details>
-
- <h3> Other </h3>
-
-  <details>
-      <summary>
-	<a href="https://github.com/pystardust/ani-cli/">ani-cli</a>
-	A cli tool to browse and play anime
-      </summary>
-      <video controls="controls" width="600" alt="Video preview for ani-cli">
-	<source type="video/mp4" src="https://user-images.githubusercontent.com/44473782/224679247-0856e652-f187-4865-bbcf-5a8e5cf830da.webm">
-      </video>
-  </details>
-
-  <details>
-    <summary>
-      <a href="https://github.com/port19x/deadsniper">Deadsniper</a>
-      A fast, specialized dead-link checker
-    </summary>
-    <pre><code>Usage: deadsniper [options] <link to sitemap.xml>
-
-Options:
-  -h | --help    print this help text
-  -V | --version print the version number
-  -s | --strict  allow only HTTP 200 response codes
-  -t | --timeout set the request timeout in seconds (default 5)
-
-Examples:
-  deadsniper https://port19.xyz/sitemap.xml
-  deadsniper -V
-  deadsniper --strict https://port19.xyz/sitemap.xml
-  deadsniper -t 1 -s https://port19.xyz/sitemap.xml</code></pre>
-  </details>
-
-  <details>
-    <summary>
-      <a href="https://github.com/port19x/redqu/">redqu</a>
-      A media centric reddit client
-    </summary>
-    <img src="{{ get_url(path="previews/prev-redqu.jpg") }}" width="600" alt="Image preview for redqu">
-  </details>
-</section>
-<hr>
 {% endblock content %}

@@ -4,23 +4,38 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Language" content="en">
-  <meta name="author" content="port19">
+  <meta name="author" content="eatmynerds">
   <meta name="generator" content="zola">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="{{ get_url(path="favicon.ico")}}">
-  <link rel="apple-touch-icon" href="{{ get_url(path="apple-touch-icon.png")}}">
-  <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css") }}" />
-  <link rel="preload" href="{{ get_url(path="NotoColorEmojiSubfont.woff2") }}" as="font" type="font/woff2">
-  <link type="application/rss+xml" rel="alternate" href="https://port19.xyz/rss.xml" title="Port19s Webpage">
-  {% block meta %} {% endblock %}
+  <link rel="icon" type="image/x-icon" href="{{ get_url(path="favicon.ico") }}">
+  <link rel="apple-touch-icon" href="{{ get_url(path="apple-touch-icon.png") }}">
+  <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css") }}">
+  <link rel="preload" href="{{ get_url(path="JetBrainsMono-Regular.woff2") }}" as="font" type="font/woff2">
+  <link type="application/rss+xml" rel="alternate" href="https://eatmynerds.live/rss.xml" title="Eatmynerds Webpage">
+  {% block meta %}{% endblock %}
 </head>
 
 <body>
-  {% block content %} {% endblock %}
-  <footer>
-    <a href="mailto:port19@port19.xyz"><img src="{{ get_url(path="buttons/email.gif") }}" alt="Webbutton to email" style="height:31px;width:88px;" align="left"></a>
-    <a href="/rss.xml"><img src="{{ get_url(path="buttons/rss.gif") }}" alt="Webbutton to rss feed" style="height:31px;width:88px;" align="right"></a>
-  </footer>
-</body>
+  {% block content %}{% endblock %}
 
+  <footer class="footer-bar">
+    <a href="mailto:eatmynerds@gmail.com">
+      <img src="{{ get_url(path='buttons/email.gif') }}" alt="Email" style="height:31px;width:88px;">
+    </a>
+    <a href="/rss.xml">
+      <img src="{{ get_url(path='buttons/rss.gif') }}" alt="RSS Feed" style="height:31px;width:88px;">
+    </a>
+
+    <div class="inspiration">
+      <span style="color:#ccc; font-size: 0.9rem;">
+        Original Website Inspiration:
+      </span>
+      <a href="https://port19.xyz" target="_blank">
+        <img src="{{ get_url(path='buttons/port19.gif') }}" width="88" height="31" style="vertical-align: middle;">
+      </a>
+    </div>
+  </footer>
+
+</body>
 </html>
+

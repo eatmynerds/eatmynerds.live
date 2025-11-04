@@ -1,7 +1,6 @@
 +++
 title = "Tech"
-description = "My writings on free software, linux and programming"
+description = "Tech/Cybersecurity related stuff"
 sort_by = "date"
-weight = 1
-insert_anchor_links = "left"
+transparent = true
 +++

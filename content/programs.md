@@ -1,76 +1,20 @@
 +++
 title = "💻Programs I use💻"
-date = 2024-03-16
-updated = 2025-10-31
-description = "and recommend"
+date = 2025-11-04
+updated = 2025-11-04
+description = ""
 +++
 
-## Base
+Here are some of my favorite and most-used programs.
 
-### [Linux Mint](https://linuxmint.com/)
+### [QBitTorrent](https://www.qbittorrent.org/)
+A fast, lightweight, and ad-free BitTorrent client that works everywhere.
 
-While I have mostly used Arch in the past, Mint has always been my second favorite distro.
-Now that my computer usage is becoming less technical as I turn away from my career in IT, I thought it would be wise to migrate to a "just works" or "beginner friendly" linux distro.
-This strikes a middle ground between the polish of mac os that comes at the price of terrible gaming and scripting, and the very hands on nature of my custom arch setup.
-I make minimal adjustments to Linux Mint, only installing a small handful of packages that are documented in the readme of my [dotfiles](https://github.com/port19x/dotfiles) repo.
+### [Neovim](https://neovim.io/)
+My go-to text editor, I use it on basically everything.
 
-### [Librewolf](https://librewolf.net/)
+### [Lobster](https://github.com/justchokingaround/lobster)
+A simple and effective command-line tool for watching movies and tv series directly in your terminal. It's a great complement to ani-cli for everything that isn't anime.
 
-I'm currently using librewolf as my primary web browser.
-I like it due to it's unparalleled out-of-the-box security and privacy.
-For security reasons I use the flatpak version over the native package.
-I've also extensively used both [Brave](https://brave.com/) and [Qutebrowser](https://qutebrowser.org/) in the past and can recommend them for speed and keyboard driven operation respectively.
-
-## Multimedia
-
-### [MPV](https://mpv.io/)
-
-My media player of choice is mpv, it's great for both audio and video and the dominant choice among linux users.
-To mac users I can recommend [IINA](https://iina.io/).
-
-### [FFMPEG](https://ffmpeg.org/)
-
-I use ffmpeg to record audio and video, to do basic audio post-processing and to convert between the various encoders and container formats.
-If you're on linux it's likely already installed as a dependency to something else.
-
-### [Imagemagick](https://imagemagick.org/)
-
-I use imagemagick to do all my basic image conversion and editing. \
-This includes cropping, scaling, captions, appending, rotation. \
-For anything more advanced, which I only need to do every few months, I use [gimp](https://www.gimp.org/).
-
-### [Poppler](https://poppler.freedesktop.org/)
-
-Poppler is a great little library for basic pdf editing, like splitting and concatenation.
-
-### [YT-DLP](https://github.com/yt-dlp/yt-dlp)
-
-With yt-dlp I download youtube videos, music, or full channels even. \
-Enough said.
-
-## Writing
-
-### This Website
-
-I've written at length about all the various components that go into this website. \
-Check out my blog post on it [here](https://port19.xyz/tech/blog/).
-
-### [LaTeX](https://www.latex-project.org/)
-
-I wrote all my academic papers in emacs org-mode using the latex export. \
-This is a pretty common setup among emacs users.
-
-### [LaTeX Beamer](https://latex-beamer.com/quick-start/)
-
-I also did my college presentations in emacs org-mode, leveraging latex beamer. \
-One nice feature of latex beamer I've seen nowhere else is the progress indicator at the top.
-
-### [LaTeX Moderncv](https://github.com/moderncv/moderncv)
-
-I format job applications via LaTeX ModernCV and can highly recommend it to stand out amongst the mountain of poorly typeset CVs made in Microsoft word. \
-I use the banking style and prefer a red accent color.
-
-### [Aspell](http://aspell.net/)
-
-My spell checker of choice is aspell, which I frequently invoke through `ispell` in emacs. \
-It has it's flaws, if you know of something better on linux please let me know.
+### [Ani-cli](https://github.com/pystardust/ani-cli)
+An essential script for any anime fan who likes the terminal. It lets you find, watch, and download your favorite shows with a few simple commands. It's fast, efficient, and makes watching anime incredibly convenient.
