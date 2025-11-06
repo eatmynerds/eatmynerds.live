@@ -5,9 +5,6 @@ updated = 2025-11-04
 description = "A short list of my favorite hobbies and interests."
 +++
 
-
-<div class="gallery">
-
 Here are some of the things i enjoy.
 
 ### Programming
@@ -22,9 +19,11 @@ I use linux as my main Operating System I love how customizable it is and the fr
 ### Anime
 My all-time favorites are:
 #### Gurren Lagann 
-![Gurren Lagann](/images/anime/gurren-lagann.jpg)
+<div class="gallery">
+  <img src="/images/anime/gurren-lagann.jpg" alt="Gurren Lagann">
+</div>
 
 #### Angel Beats!
-![Angel Beats](/images/anime/angel-beats.jpg)
-
+<div class="gallery">
+  <img src="/images/anime/angel-beats.jpg" alt="Angel Beats">
 </div>

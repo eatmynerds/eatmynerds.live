@@ -1,12 +1,13 @@
 +++
 title = "👋 Welcome"
 date = 2025-11-04
+updated = 2025-11-06
 description = "An introduction to my personal blog and what you can find here."
 +++
 
 # Welcome
 
-Thanks for visiting my website. This is my space to write about my thoughts, share stuff I'm working on, and write about the things that I'm passionate about.
+Thanks for visiting my website. 
 
 ### What You'll Find Here
 
